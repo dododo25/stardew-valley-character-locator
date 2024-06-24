@@ -22,7 +22,7 @@ const App = () => {
   return (
     <div className='vh-100 overflow-hidden'>
       <div className='vh-100 d-flex justify-content-center align-items-center'>
-        <Map />
+        <Map characters={[]} />
       </div>
       <div className='vh-100 d-flex justify-content-end align-items-center position-relative pe-none' style={{bottom: '100vh'}}>
         <div className='h-100 d-flex justify-content-center py-4' style={{width: '16%', backgroundImage: 'url(images/misc/MapBackground.png)', borderLeft: '12px solid black', borderImage: 'url(images/misc/LeftBorder.png) 16 round'}}>

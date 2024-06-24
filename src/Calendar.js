@@ -27,12 +27,12 @@ const Calendar = props => {
       <div className='d-flex flex-row justify-content-center align-items-center'>
         <div className='d-flex flex-column'>
           <div className='d-flex flex-row'>
-            <img className='calendar-button c-pointer' src='/images/misc/season/Spring.png' alt='spring' style={{border: '12px solid transparent', borderImage: props.season === 'spring' ? 'url(images/misc/FrameBorder.png) 12 round' : undefined, imageRendering: 'pixelated'}} onClick={() => props.onSeasonSet('spring')} />
-            <img className='calendar-button c-pointer' src='/images/misc/season/Summer.png' alt='summer' style={{border: '12px solid transparent', borderImage: props.season === 'summer' ? 'url(images/misc/FrameBorder.png) 12 round' : undefined, imageRendering: 'pixelated'}} onClick={() => props.onSeasonSet('summer')} />
+            <img className='calendar-button c-pointer' src='/images/season/Spring.png' alt='spring' style={{border: '12px solid transparent', borderImage: props.season === 'spring' ? 'url(images/misc/FrameBorder.png) 12 round' : undefined, imageRendering: 'pixelated'}} onClick={() => props.onSeasonSet('spring')} />
+            <img className='calendar-button c-pointer' src='/images/season/Summer.png' alt='summer' style={{border: '12px solid transparent', borderImage: props.season === 'summer' ? 'url(images/misc/FrameBorder.png) 12 round' : undefined, imageRendering: 'pixelated'}} onClick={() => props.onSeasonSet('summer')} />
           </div>
           <div className='d-flex flex-row'>
-            <img className='calendar-button c-pointer' src='/images/misc/season/Fall.png' alt='fall' style={{border: '12px solid transparent', borderImage: props.season === 'fall' ? 'url(images/misc/FrameBorder.png) 12 round' : undefined, imageRendering: 'pixelated'}} onClick={() => props.onSeasonSet('fall')} />
-            <img className='calendar-button c-pointer' src='/images/misc/season/Winter.png' alt='winter' style={{border: '12px solid transparent', borderImage: props.season === 'winter' ? 'url(images/misc/FrameBorder.png) 12 round' : undefined, imageRendering: 'pixelated'}} onClick={() => props.onSeasonSet('winter')} />
+            <img className='calendar-button c-pointer' src='/images/season/Fall.png' alt='fall' style={{border: '12px solid transparent', borderImage: props.season === 'fall' ? 'url(images/misc/FrameBorder.png) 12 round' : undefined, imageRendering: 'pixelated'}} onClick={() => props.onSeasonSet('fall')} />
+            <img className='calendar-button c-pointer' src='/images/season/Winter.png' alt='winter' style={{border: '12px solid transparent', borderImage: props.season === 'winter' ? 'url(images/misc/FrameBorder.png) 12 round' : undefined, imageRendering: 'pixelated'}} onClick={() => props.onSeasonSet('winter')} />
           </div>
         </div>
       </div>

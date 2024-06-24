@@ -2,6 +2,8 @@ import { useRef, useState } from 'react';
 
 import './Map.css';
 
+import { characterSize } from './Character.js';
+
 const mapWidth = 1200;
 const mapHeight = 720;
 const marginSize = 12;
@@ -12,7 +14,7 @@ const maxScaleFactor = 2.5;
 const fullWidth = mapWidth + marginSize * 2;
 const fullHeight = mapHeight + marginSize * 2;
 
-const Map = () => {
+const Map = props => {
   const mapRef = useRef(null);
 
   const [mapActive, setMapActive] = useState(false);
@@ -77,6 +79,12 @@ const Map = () => {
     setScaleFactor(newScaleFactor);
   };
 
+  const prepared = props.characters.map(v => 
+    <div key={v.name} className='position-absolute' style={{width: 'fit-content', left: v.x - characterSize / 2, top: v.y - characterSize / 2, transform: `scale(${1 / scaleFactor})`}}>
+      {v.component}
+    </div>
+  );
+
   return (
     <div className='position-relative overflow-hidden pe-none user-select-none' style={{width: fullWidth, height: fullHeight}}>
       <div className='w-100 h-100' style={{backgroundImage: `url(/images/misc/MapBackground.png)`, border: '16px solid', borderImage: `url(/images/misc/MapBorder.png) 16 round`}}></div>
@@ -84,6 +92,9 @@ const Map = () => {
         <div className='pe-none' style={{width: mapWidth, height: mapHeight, transformOrigin: `${xTransformOrigin}px ${yTransformOrigin}px`, transform: `translate(${xAnchor}px, ${yAnchor}px) scale(${scaleFactor})`}}>
           <div className='w-100 h-100 position-relative'>
             <img src='/images/map/MapSpring.png' alt='map' style={{imageRendering: 'pixelated'}} />
+          </div>
+          <div className='w-100 h-100 position-relative' style={{bottom: '100%'}}>
+            {prepared}
           </div>
         </div>
       </div>
