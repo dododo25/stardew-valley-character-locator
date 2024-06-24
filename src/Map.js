@@ -2,8 +2,6 @@ import { useRef, useState } from 'react';
 
 import './Map.css';
 
-import { characterSize } from './Character.js';
-
 const mapWidth = 1200;
 const mapHeight = 720;
 const marginSize = 12;
@@ -79,9 +77,9 @@ const Map = props => {
     setScaleFactor(newScaleFactor);
   };
 
-  const prepared = props.characters.map(v => 
-    <div key={v.name} className='position-absolute' style={{width: 'fit-content', left: v.x - characterSize / 2, top: v.y - characterSize / 2, transform: `scale(${1 / scaleFactor})`}}>
-      {v.component}
+  const prepared = props.characters.map(c => 
+    <div key={c.name} className='position-absolute d-flex w-0 h-0 justify-content-center align-items-center' style={{left: c.x, top: c.y, transform: `scale(${1 / scaleFactor})`}}>
+      {c.component}
     </div>
   );
 
