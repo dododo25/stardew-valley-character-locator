@@ -1,16 +1,9 @@
 .clock-content {
-  font-family: "DotGothic16", sans-serif;
-  font-optical-sizing: auto;
   font-weight: 400;
-  font-style: normal;
   font-size: 2em;
 }
 
 .clock-button {
-  cursor: pointer;
-  font-family: "DotGothic16", sans-serif;
-  font-optical-sizing: auto;
   font-weight: 800;
-  font-style: normal;
   font-size: 1.2em;
 }
