@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Clock from './Clock.js';
 import Calendar from './Calendar.js';
 import Map from './Map.js';
+import PickWeather from './PickWeather.js';
 
 const floorMod = (v, mod) => {
   return (mod + v % mod) % mod;
@@ -10,6 +11,7 @@ const floorMod = (v, mod) => {
 
 const App = () => {
   const [season, setSeason] = useState('spring');
+  const [weather, setWeather] = useState('sun');
   const [day, setDay] = useState(1);
   const [time, setTime] = useState(0);
 
@@ -32,6 +34,10 @@ const App = () => {
             <div className='d-flex flex-column align-items-center'>
               <h2>Calendar</h2>
               <Calendar season={season} day={day} onSeasonSet={setSeason} onDaySet={setDay} />
+            </div>
+            <div className='d-flex flex-column align-items-center'>
+              <h2>Weather</h2>
+              <PickWeather weather={weather} onWeatherSet={setWeather} />
             </div>
           </div>
         </div>
